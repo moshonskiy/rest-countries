@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "noEmit": true, // Не отправлять вывод (то есть не компилировать код, а только проверить типы).
+        "jsx": "react-jsx", // Поддержка JSX в файлах .tsx
+        "sourceMap": true, // Сгенерировать соответствующий файл .map
+        "declaration": true, // Сгенерировать соответствующий файл .d.ts
+        "esModuleInterop": true,
+    },
+    "include": ["src/**/*", "./declaration.d.ts"],
+    "exclude": ["node_modules/**/*"]
+}
