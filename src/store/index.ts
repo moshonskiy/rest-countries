@@ -1,9 +1,10 @@
-import { createStore, compose, applyMiddleware } from 'redux';
-import { rootReducer } from './rootReducer';
+import { configureStore } from '@reduxjs/toolkit';
+import testReducer from './testSlice';
 
-const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export const store = createStore(
-    rootReducer,
-    composeEnhancers(applyMiddleware()),
-);
+export const store = configureStore({
+    reducer: {
+        test: testReducer,
+    },
+    devTools: true,
+})
