@@ -13,7 +13,7 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.module\.pcss$/,
+                test: /\.css$/,
                 exclude: /node_modules/,
                 use: [
                     {
@@ -21,16 +21,7 @@ module.exports = {
                     },
                     {
                         loader: 'css-loader',
-                        options: {
-                            importLoaders: 1,
-                            modules: {
-                                localIdentName: '[local]--[hash:base64:5]',
-                            }
-                        }
                     },
-                    {
-                        loader: 'postcss-loader',
-                    }
                 ],
             },
         ]

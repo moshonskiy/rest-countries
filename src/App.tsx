@@ -1,13 +1,28 @@
 import React, { FunctionComponent } from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
-import s from './App.module.pcss';
+import { Header } from './components/Header';
+import { Main } from './components/Main';
+
+import HomePage from './pages/HomePage';
+import Details from './pages/Details';
+import NotFound from './pages/NotFound';
 
 const App: FunctionComponent = () => {
     return (
-        <div className={s.app}>
-            Manually configured react app
-        </div>
-    );
+        <>
+          <Header />
+          <Main>
+            <Routes>
+                <Route path="/" element={
+                    <HomePage />
+                } />
+                <Route path="/country/:name" element={<Details />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Main>
+        </>
+      );
 };
 
 export default App;
