@@ -56,7 +56,6 @@ interface Flag {
 export const loadCountries = createAsyncThunk<CountryInfo[], undefined, { extra: ExtraArgumentType }>(
     '@@countries/loadCountries',
     async (_, { extra: { client, api } }) => {
-        console.log(")", _);
         const { data } = await client.get(api.ALL_COUNTRIES);
         return data;
     },
