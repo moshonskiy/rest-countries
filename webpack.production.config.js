@@ -40,7 +40,7 @@ module.exports = {
             filename: 'styles.[contenthash].css',
         }),
         new HtmlWebpackPlugin({
-            template: './dist/index.html',
+            template: './public/index.html',
         }),
     ],
 }
