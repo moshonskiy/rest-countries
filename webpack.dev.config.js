@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -30,21 +29,18 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js']
     },
     output: {
+        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
     },
     devServer: {
         port: 3000,
         static: {
-            directory: path.join(__dirname, 'public/'),
-            publicPath: 'http://localhost:3000',
+            directory: path.join(__dirname, './dist'),
         },
-        hot: true,
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
-            template: './public/index.html',
+            template: './dist/index.html',
         }),
     ],
-    devtool: 'eval-source-map',
 }
