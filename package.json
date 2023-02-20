@@ -12,6 +12,7 @@
     "typescript",
     "webpack"
   ],
+  "homepage": "https://rest-countries-lovat.vercel.app",
   "author": "Kirill Moshonskiy",
   "license": "ISC",
   "devDependencies": {
